@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suvanwit Mandal — Portfolio</title>
+<meta name="description" content="Suvanwit Mandal — CS undergraduate at IIIT Naya Raipur. Independent ML researcher working on aircraft engine health monitoring, computer vision, and applied machine learning." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff9c%22>&gt;_</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="noise"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">suvanwit<span class="cursor-blink">_</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">about</a>
+      <a href="#education" class="nav-link">education</a>
+      <a href="#experience" class="nav-link">experience</a>
+      <a href="#projects" class="nav-link">projects</a>
+      <a href="#skills" class="nav-link">skills</a>
+      <a href="#writing" class="nav-link">writing</a>
+      <a href="#contact" class="nav-link">contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">$ whoami</p>
+        <h1>Suvanwit Mandal</h1>
+        <p class="hero-sub">
+          <span id="typed"></span><span class="cursor-blink">|</span>
+        </p>
+        <p class="hero-desc">
+          B.Tech CS undergrad at IIIT Naya Raipur, building applied machine learning
+          systems — from aircraft engine health monitoring to computer vision for
+          public infrastructure and the environment.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">view projects</a>
+          <a href="#contact" class="btn btn-ghost">get in touch</a>
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/suvanwit25100-rgb" target="_blank" rel="noopener">GitHub</a>
+          <span>·</span>
+          <a href="https://linkedin.com/in/suvanwit-mandal-7969b82b7" target="_blank" rel="noopener">LinkedIn</a>
+          <span>·</span>
+          <a href="mailto:suvanwit25100@iiitnr.edu.in">Email</a>
+        </div>
+      </div>
+
+      <div class="hero-terminal" aria-hidden="true">
+        <div class="term-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="term-title">suvanwit@iiitnr: ~</span>
+        </div>
+        <div class="term-body">
+<pre><code><span class="t-prompt">$</span> cat profile.json
+{
+  <span class="t-key">"name"</span>: <span class="t-str">"Suvanwit Mandal"</span>,
+  <span class="t-key">"role"</span>: <span class="t-str">"CSE Undergrad, IIIT Naya Raipur"</span>,
+  <span class="t-key">"focus"</span>: [<span class="t-str">"ML"</span>, <span class="t-str">"PHM"</span>, <span class="t-str">"CV"</span>],
+  <span class="t-key">"status"</span>: <span class="t-str">"researching + building"</span>,
+  <span class="t-key">"current_rmse"</span>: <span class="t-num">15.02</span>,
+  <span class="t-key">"fault_detection_rate"</span>: <span class="t-str">"93.8%"</span>
+}
+<span class="t-prompt">$</span> <span class="term-cursor">_</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-tag">01 · about</p>
+      <h2 class="section-title">About me</h2>
+      <div class="about-grid">
+        <p class="about-text">
+          I'm a Computer Science undergraduate at IIIT Naya Raipur, currently in my first year,
+          spending most of my time outside coursework on independent machine learning research.
+          My main project is a multi-model Prognostics &amp; Health Management (PHM) framework for
+          aircraft engines, built on NASA's C-MAPSS and N-CMAPSS turbofan degradation datasets and
+          calibrated for Indian aviation operating conditions — work I'm drafting into an IEEE-format
+          research paper.
+        </p>
+        <p class="about-text">
+          Alongside that, I've built computer vision systems for pothole detection and satellite-based
+          deforestation monitoring, and regression models for applied prediction problems. I'm a Google
+          Student Ambassador at IIIT Naya Raipur, where I run workshops on Google Gemini development,
+          and I've competed in space, policy, and hackathon tracks at IIT Bhubaneswar, IIT Delhi, and
+          IIT Kanpur.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">15.02</span>
+            <span class="stat-label">RMSE (cycles) on C-MAPSS FD001</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">93.8%</span>
+            <span class="stat-label">critical fault detection rate</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">350+</span>
+            <span class="stat-label">students reached via Google workshops</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">hackathons across IIT campuses</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <p class="section-tag">02 · education</p>
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>B.Tech, Computer Science &amp; Engineering</h3>
+              <span class="timeline-date">Sept 2025 – July 2029 (Expected)</span>
+            </div>
+            <p class="timeline-org">Dr. Shyama Prasad Mukherjee International Institute of Information Technology, Naya Raipur</p>
+            <p class="timeline-meta">CGPA: 7.80 / 10.00</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Class XII — CBSE</h3>
+              <span class="timeline-date">2025</span>
+            </div>
+            <p class="timeline-org">Colonel's Academy Of Radiant Education</p>
+            <p class="timeline-meta">75%</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Class X — CBSE</h3>
+              <span class="timeline-date">2023</span>
+            </div>
+            <p class="timeline-org">Bal Bharati Public School, Bilaspur, Chhattisgarh</p>
+            <p class="timeline-meta">95%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / ACHIEVEMENTS -->
+  <section class="section" id="experience">
+    <div class="container">
+      <p class="section-tag">03 · experience &amp; achievements</p>
+      <h2 class="section-title">Experience &amp; Achievements</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Google Student Ambassador</h3>
+          <p class="card-meta">Google · IIIT Naya Raipur · Sept 2025</p>
+          <p>Organised workshops and tech talks on Google Gemini development, reaching 350+ students;
+            increased programme sign-ups by ~40% and mentored peers during hackathons and training sessions.</p>
+        </div>
+        <div class="card">
+          <h3>Hackathon Participant</h3>
+          <p class="card-meta">Multiple institutions · 2024–2025</p>
+          <p>Space Hackathon (IIT Bhubaneswar) · National Space Hackathon (IIT Delhi) · Policy Hackathon (IIT Kanpur)
+            · E-Summit Hackathon, State Govt. level (IIIT Naya Raipur).</p>
+        </div>
+        <div class="card">
+          <h3>Winner, National Level 3D Prototyping Competition</h3>
+          <p class="card-meta">All India School Level</p>
+          <p>Demonstrated engineering design thinking and problem solving at the all-India school level.</p>
+        </div>
+        <div class="card">
+          <h3>Innovation Project Contributor</h3>
+          <p class="card-meta">Dept. of Science &amp; Technology, Govt. of India · 2020–2022</p>
+          <p>Submitted technology innovation proposals to the DST portal covering smart agriculture
+            (drip irrigation automation) and defence-oriented surveillance systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <p class="section-tag">04 · projects</p>
+      <h2 class="section-title">Projects</h2>
+
+      <article class="project-featured">
+        <div class="project-featured-head">
+          <span class="badge">featured · ongoing research</span>
+          <span class="timeline-date">2025 – Present</span>
+        </div>
+        <h3>Multi-Model ML Framework for Aircraft Engine Health Monitoring</h3>
+        <p>
+          A three-model Prognostics &amp; Health Management (PHM) pipeline — an LSTM Autoencoder for
+          unsupervised anomaly detection, an LSTM RUL (Remaining Useful Life) predictor, and an XGBoost
+          fault classifier with SHAP explainability — trained on NASA's C-MAPSS and N-CMAPSS turbofan
+          engine degradation datasets.
+        </p>
+        <ul class="project-points">
+          <li>RMSE of <strong>15.02 cycles</strong> on C-MAPSS FD001, improving on the published LSTM baseline of Zheng et al. (2017) at 16.14.</li>
+          <li><strong>93.8%</strong> critical fault detection rate with a <strong>0.0%</strong> false alert rate.</li>
+          <li>Five-tier risk fusion engine (NOMINAL → WATCH → ADVISORY → ACTION → AOG) aligned with DGCA CAR-M requirements for CAMO decision support.</li>
+          <li>Extended to NASA N-CMAPSS (2021) with real flight profiles and India-specific calibration — ISA +20°C correction and 1.30× utilisation scaling for Indian LCC operations.</li>
+          <li>Deployed as a React fleet-monitoring dashboard backed by a FastAPI inference server. Research paper drafted (9 sections, 15 IEEE references).</li>
+        </ul>
+        <div class="tags">
+          <span>Python</span><span>PyTorch</span><span>XGBoost</span><span>SHAP</span>
+          <span>MLflow</span><span>FastAPI</span><span>React.js</span><span>pandas</span>
+        </div>
+        <a class="project-link" href="https://github.com/suvanwit25100-rgb/Multi-Model-Machine-Learning-Framework-for-Aircraft-Engine-Health-Monitoring" target="_blank" rel="noopener">view on GitHub →</a>
+      </article>
+
+      <div class="project-grid">
+        <article class="card project-card">
+          <h3>Pothole Detection using ML &amp; Computer Vision</h3>
+          <p class="card-meta">State Government Level Hackathon · E-Summit, IIIT Naya Raipur · 2025</p>
+          <p>Real-time pothole detection system built during a state-level hackathon; an image
+            classification pipeline for road infrastructure monitoring.</p>
+          <div class="tags">
+            <span>Python</span><span>Machine Learning</span><span>Computer Vision</span>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3>GreenWatch — Satellite AI for Deforestation Detection</h3>
+          <p class="card-meta">2024</p>
+          <p>Deep learning system to detect illegal logging and deforestation from satellite imagery
+            using computer vision.</p>
+          <div class="tags">
+            <span>Python</span><span>Deep Learning</span><span>Computer Vision</span>
+          </div>
+          <a class="project-link" href="https://github.com/suvanwit25100-rgb/GreenWatch-Satellite-AI" target="_blank" rel="noopener">view on GitHub →</a>
+        </article>
+
+        <article class="card project-card">
+          <h3>House Price Prediction — Regression ML Model</h3>
+          <p class="card-meta">2024</p>
+          <p>Regression-based model for housing price estimation, covering the full pipeline from
+            data preprocessing through training and evaluation.</p>
+          <div class="tags">
+            <span>Python</span><span>scikit-learn</span>
+          </div>
+          <a class="project-link" href="https://github.com/suvanwit25100-rgb/House-Price-Prediction-ML-Model" target="_blank" rel="noopener">view on GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <p class="section-tag">05 · skills</p>
+      <h2 class="section-title">Skills</h2>
+      <p class="skills-note">Tools and concepts I've worked with across coursework, self-directed projects, and independent research — actively building depth in all of them.</p>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="tags"><span>Python</span><span>C++</span><span>C</span><span>JavaScript</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>ML / Deep Learning</h3>
+          <div class="tags"><span>PyTorch</span><span>XGBoost</span><span>scikit-learn</span><span>SHAP</span><span>MLflow</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Data Handling</h3>
+          <div class="tags"><span>pandas</span><span>NumPy</span><span>h5py</span><span>matplotlib</span><span>seaborn</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Deployment</h3>
+          <div class="tags"><span>FastAPI</span><span>React.js</span><span>Git</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Academic Tools</h3>
+          <div class="tags"><span>MATLAB</span><span>Xilinx Vivado</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Design Tools</h3>
+          <div class="tags"><span>AutoCAD (basics)</span><span>Photoshop</span><span>Illustrator</span><span>Final Cut Pro</span><span>Filmora</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING / PUBLICATION -->
+  <section class="section section-alt" id="writing">
+    <div class="container">
+      <p class="section-tag">06 · writing</p>
+      <h2 class="section-title">Publication &amp; Writing</h2>
+      <div class="pub-card">
+        <span class="badge badge-amber">in progress</span>
+        <h3>A Multi-Model Machine Learning Framework for Aircraft Engine Health Monitoring Calibrated for Indian Aviation Operations</h3>
+        <p class="card-meta">Suvanwit Mandal · Targeting IEEE Transactions on Reliability / IEEE ICPHM 2026</p>
+        <p>IJIRT-format draft complete — 9 sections, 15 IEEE references. A link will be added here once the paper is published.</p>
+      </div>
+      <p class="skills-note" style="margin-top:1.5rem;">More write-ups on ML research and projects will be posted here over time.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container contact-container">
+      <p class="section-tag">07 · contact</p>
+      <h2 class="section-title">Let's talk</h2>
+      <p class="contact-lead">
+        Open to research collaborations, internships, and interesting ML problems.
+        The fastest way to reach me is email.
+      </p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:suvanwit25100@iiitnr.edu.in">suvanwit25100@iiitnr.edu.in</a>
+      </div>
+      <div class="hero-social contact-social">
+        <a href="https://github.com/suvanwit25100-rgb" target="_blank" rel="noopener">GitHub</a>
+        <span>·</span>
+        <a href="https://linkedin.com/in/suvanwit-mandal-7969b82b7" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Suvanwit Mandal. Built with HTML, CSS &amp; JS.</p>
+    <a href="#home">back to top ↑</a>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
