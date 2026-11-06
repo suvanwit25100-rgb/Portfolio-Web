@@ -1,37 +1,44 @@
-// ---------- PRELOADER: simulated live agent build ----------
+// ---------- PRELOADER: multiple agents building the site live ----------
 (function preload() {
   const preloader = document.getElementById("preloader");
   const fill = document.getElementById("preloaderFill");
   const pct = document.getElementById("preloaderPct");
   const skip = document.getElementById("preloaderSkip");
   const logEl = document.getElementById("preloaderLog");
+  const grid = document.getElementById("agentGrid");
   if (!preloader) return;
 
   document.body.classList.add("preloading");
 
-  const steps = [
-    "spinning up agent runtime…",
-    "reading resume.pdf → profile.json",
-    "scaffolding hero, about, projects…",
-    "rendering 4 projects, 6 skill groups",
-    "wiring scroll reveals + nav spy",
-    "build ready.",
-  ];
+  // Each agent emits a sequence of steps as the build progresses.
+  const agents = {
+    cabin:    { label: "cabin-agent",    steps: ["mounting layout grid", "placing hero + sections", "sealing cabin frame"] },
+    avionics: { label: "avionics-agent", steps: ["reading resume.pdf", "parsing → profile.json", "loading 4 projects"] },
+    livery:   { label: "livery-agent",   steps: ["mixing aviation palette", "applying gold livery", "polishing surfaces"] },
+    motion:   { label: "motion-agent",   steps: ["wiring smooth-scroll", "arming reveal triggers", "calibrating parallax"] },
+  };
+  const order = ["cabin", "avionics", "livery", "motion"];
+  const rows = {};
+  if (grid) grid.querySelectorAll(".agent-row").forEach((r) => { rows[r.dataset.agent] = r; });
 
-  let i = 0;
   let value = 0;
   let done = false;
+  const progress = { cabin: 0, avionics: 0, livery: 0, motion: 0 };
 
-  function addLine(text, ok) {
+  function addLine(agentKey, text, ok) {
     const p = document.createElement("p");
-    p.innerHTML = (ok ? '<span class="bl-ok">✓</span>' : '<span class="bl-pending">…</span>') + text;
+    p.innerHTML =
+      '<span class="bl-agent">' + agentKey + "</span>" +
+      (ok ? '<span class="bl-ok">✓</span>' : '<span class="bl-pending">…</span>') +
+      text;
     logEl.appendChild(p);
-    while (logEl.children.length > 4) logEl.removeChild(logEl.firstChild);
+    while (logEl.children.length > 3) logEl.removeChild(logEl.firstChild);
   }
 
   function finish() {
     if (done) return;
     done = true;
+    order.forEach((k) => rows[k] && rows[k].classList.add("done"));
     preloader.classList.add("hidden");
     document.body.classList.remove("preloading");
     revealBuildLog();
@@ -39,23 +46,40 @@
   }
 
   const interval = setInterval(() => {
-    value = Math.min(100, value + Math.random() * 18 + 6);
+    value = Math.min(100, value + Math.random() * 12 + 5);
     fill.style.width = value + "%";
     pct.textContent = Math.floor(value) + "%";
 
-    if (i < steps.length && value > (i + 1) * (100 / steps.length) - 15) {
-      addLine(steps[i], i < steps.length - 1);
-      i++;
-    }
+    // Agents work in parallel but slightly staggered.
+    order.forEach((key, idx) => {
+      const a = agents[key];
+      const row = rows[key];
+      const startAt = idx * 12;
+      const localPct = Math.max(0, Math.min(100, (value - startAt) / (100 - startAt) * 100));
+      const stepIndex = Math.floor((localPct / 100) * a.steps.length);
+
+      if (localPct > 0 && row) row.classList.add("active");
+      if (stepIndex > progress[key] && progress[key] < a.steps.length) {
+        addLine(key, a.steps[progress[key]], true);
+        progress[key]++;
+      }
+      if (localPct >= 100 && row) row.classList.add("done");
+    });
 
     if (value >= 100) {
       clearInterval(interval);
-      setTimeout(finish, 350);
+      order.forEach((key) => {
+        while (progress[key] < agents[key].steps.length) {
+          addLine(key, agents[key].steps[progress[key]], true);
+          progress[key]++;
+        }
+      });
+      setTimeout(finish, 400);
     }
-  }, 220);
+  }, 240);
 
   if (skip) skip.addEventListener("click", () => { clearInterval(interval); finish(); });
-  setTimeout(() => { clearInterval(interval); finish(); }, 4500);
+  setTimeout(() => { clearInterval(interval); finish(); }, 5200);
 })();
 
 function revealBuildLog() {
@@ -154,7 +178,7 @@ function revealBuildLog() {
 // ---------- Hero parallax (lightweight, native-scroll-safe) ----------
 (function heroParallax() {
   const ghost = document.querySelector(".hero-ghost");
-  const rail = document.querySelector(".hero-jp-rail");
+  const rail = document.querySelector(".hero-rail");
   if (!ghost && !rail) return;
   function onScroll() {
     const y = window.scrollY;

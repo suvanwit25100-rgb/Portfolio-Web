@@ -5,19 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Suvanwit Mandal — Portfolio</title>
 <meta name="description" content="Suvanwit Mandal — independent machine learning researcher and CS undergraduate at IIIT Naya Raipur, working across prognostics (PHM), computer vision, and applied regression." />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff9c%22>&gt;_</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23d4af5f%22>&gt;_</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-<!-- PRELOADER: simulated live agent build -->
+<!-- PRELOADER: multiple agents building the site live -->
 <div class="preloader" id="preloader">
   <div class="preloader-inner">
-    <div class="enso" aria-hidden="true"></div>
-    <p class="preloader-jp">開発者</p>
+    <div class="loader-ring" aria-hidden="true"></div>
+    <p class="preloader-wordmark">Suvanwit Mandal</p>
+    <p class="preloader-sub">agents · assembling flight deck</p>
+
+    <div class="agent-grid" id="agentGrid">
+      <div class="agent-row" data-agent="cabin">
+        <span class="agent-spinner"></span>
+        <span class="agent-name">cabin-agent</span>
+        <span class="agent-task">layout</span>
+      </div>
+      <div class="agent-row" data-agent="avionics">
+        <span class="agent-spinner"></span>
+        <span class="agent-name">avionics-agent</span>
+        <span class="agent-task">data</span>
+      </div>
+      <div class="agent-row" data-agent="livery">
+        <span class="agent-spinner"></span>
+        <span class="agent-name">livery-agent</span>
+        <span class="agent-task">theme</span>
+      </div>
+      <div class="agent-row" data-agent="motion">
+        <span class="agent-spinner"></span>
+        <span class="agent-name">motion-agent</span>
+        <span class="agent-task">scroll</span>
+      </div>
+    </div>
+
     <div class="preloader-log" id="preloaderLog"></div>
     <div class="preloader-bar">
       <div class="preloader-bar-fill" id="preloaderFill"></div>
@@ -55,7 +80,7 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <p class="hero-ghost" aria-hidden="true">RESEARCHER</p>
-    <span class="hero-jp-rail" aria-hidden="true">研究 × 開発 × 自動化</span>
+    <span class="hero-rail" aria-hidden="true">research · vision · deployment</span>
     <div class="container hero-grid">
       <div class="hero-text">
         <p class="eyebrow">$ whoami</p>
@@ -85,16 +110,16 @@
       <div class="hero-terminal" aria-hidden="true">
         <div class="term-bar">
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="term-title">agent@suvanwit: live-build</span>
+          <span class="term-title">flight-deck · live-build</span>
         </div>
         <div class="term-body">
           <div class="build-log" id="buildLog">
-            <p><span class="t-prompt">&gt;</span> agent.init(<span class="t-str">"portfolio"</span>)</p>
-            <p class="bl-line" data-delay="300"><span class="bl-ok">✓</span> scaffold <span class="t-key">hero</span>, <span class="t-key">about</span>, <span class="t-key">projects</span></p>
-            <p class="bl-line" data-delay="700"><span class="bl-ok">✓</span> load profile from <span class="t-str">resume.pdf</span></p>
-            <p class="bl-line" data-delay="1100"><span class="bl-ok">✓</span> render 4 projects, 6 skill groups</p>
-            <p class="bl-line" data-delay="1500"><span class="bl-ok">✓</span> wire smooth-scroll + reveal animations</p>
-            <p class="bl-line" data-delay="1900"><span class="bl-pending">…</span> watching for edits</p>
+            <p><span class="t-prompt">&gt;</span> orchestrator.spawn(<span class="t-num">4</span> agents)</p>
+            <p class="bl-line" data-delay="300"><span class="bl-agent">cabin</span><span class="bl-ok">✓</span> scaffold <span class="t-key">hero</span>, <span class="t-key">about</span>, <span class="t-key">projects</span></p>
+            <p class="bl-line" data-delay="700"><span class="bl-agent">avionics</span><span class="bl-ok">✓</span> load profile from <span class="t-str">resume.pdf</span></p>
+            <p class="bl-line" data-delay="1100"><span class="bl-agent">livery</span><span class="bl-ok">✓</span> apply aviation theme</p>
+            <p class="bl-line" data-delay="1500"><span class="bl-agent">motion</span><span class="bl-ok">✓</span> wire smooth-scroll + reveals</p>
+            <p class="bl-line" data-delay="1900"><span class="bl-pending">…</span> agents watching for edits</p>
           </div>
           <pre><code><span class="t-prompt">$</span> cat profile.json
 {
@@ -115,7 +140,7 @@
   <!-- ABOUT -->
   <section class="section" id="about">
     <div class="container">
-      <p class="section-tag">01 · about <span class="jp-accent">自己紹介</span></p>
+      <p class="section-tag">01 · about <span class="tag-accent">// profile</span></p>
       <h2 class="section-title">About me</h2>
       <div class="about-grid">
         <p class="about-text">
@@ -157,7 +182,7 @@
   <!-- EDUCATION -->
   <section class="section section-alt" id="education">
     <div class="container">
-      <p class="section-tag">02 · education <span class="jp-accent">学歴</span></p>
+      <p class="section-tag">02 · education <span class="tag-accent">// training</span></p>
       <h2 class="section-title">Education</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -200,7 +225,7 @@
   <!-- EXPERIENCE / ACHIEVEMENTS -->
   <section class="section" id="experience">
     <div class="container">
-      <p class="section-tag">03 · experience &amp; achievements <span class="jp-accent">経験</span></p>
+      <p class="section-tag">03 · experience <span class="tag-accent">// flight log</span></p>
       <h2 class="section-title">Experience &amp; Achievements</h2>
       <div class="cards">
         <div class="card">
@@ -233,7 +258,7 @@
   <!-- PROJECTS -->
   <section class="section section-alt" id="projects">
     <div class="container">
-      <p class="section-tag">04 · projects <span class="jp-accent">作品</span></p>
+      <p class="section-tag">04 · projects <span class="tag-accent">// fleet</span></p>
       <h2 class="section-title">Projects</h2>
 
       <article class="project-featured">
@@ -301,7 +326,7 @@
   <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="container">
-      <p class="section-tag">05 · skills <span class="jp-accent">技術</span></p>
+      <p class="section-tag">05 · skills <span class="tag-accent">// systems</span></p>
       <h2 class="section-title">Skills</h2>
       <p class="skills-note">Tools and concepts I've worked with across coursework, self-directed projects, and independent research — actively building depth in all of them.</p>
       <div class="skills-grid">
@@ -336,7 +361,7 @@
   <!-- WRITING / PUBLICATION -->
   <section class="section section-alt" id="writing">
     <div class="container">
-      <p class="section-tag">06 · writing <span class="jp-accent">執筆</span></p>
+      <p class="section-tag">06 · writing <span class="tag-accent">// manifest</span></p>
       <h2 class="section-title">Publication &amp; Writing</h2>
       <div class="pub-card">
         <span class="badge badge-amber">in progress</span>
@@ -351,7 +376,7 @@
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="container contact-container">
-      <p class="section-tag">07 · contact <span class="jp-accent">連絡先</span></p>
+      <p class="section-tag">07 · contact <span class="tag-accent">// tower</span></p>
       <h2 class="section-title">Let's talk</h2>
       <p class="contact-lead">
         Open to research collaborations, internships, and interesting ML problems.
