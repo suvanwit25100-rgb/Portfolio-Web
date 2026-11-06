@@ -8,10 +8,26 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff9c%22>&gt;_</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+
+<!-- PRELOADER: simulated live agent build -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="enso" aria-hidden="true"></div>
+    <p class="preloader-jp">開発者</p>
+    <div class="preloader-log" id="preloaderLog"></div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill" id="preloaderFill"></div>
+    </div>
+    <div class="preloader-meta">
+      <span id="preloaderPct">0%</span>
+      <span class="preloader-skip" id="preloaderSkip">skip →</span>
+    </div>
+  </div>
+</div>
 
 <div class="noise"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -38,6 +54,8 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
+    <p class="hero-ghost" aria-hidden="true">ENGINEER</p>
+    <span class="hero-jp-rail" aria-hidden="true">研究 × 開発 × 自動化</span>
     <div class="container hero-grid">
       <div class="hero-text">
         <p class="eyebrow">$ whoami</p>
@@ -66,10 +84,18 @@
       <div class="hero-terminal" aria-hidden="true">
         <div class="term-bar">
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="term-title">suvanwit@iiitnr: ~</span>
+          <span class="term-title">agent@suvanwit: live-build</span>
         </div>
         <div class="term-body">
-<pre><code><span class="t-prompt">$</span> cat profile.json
+          <div class="build-log" id="buildLog">
+            <p><span class="t-prompt">&gt;</span> agent.init(<span class="t-str">"portfolio"</span>)</p>
+            <p class="bl-line" data-delay="300"><span class="bl-ok">✓</span> scaffold <span class="t-key">hero</span>, <span class="t-key">about</span>, <span class="t-key">projects</span></p>
+            <p class="bl-line" data-delay="700"><span class="bl-ok">✓</span> load profile from <span class="t-str">resume.pdf</span></p>
+            <p class="bl-line" data-delay="1100"><span class="bl-ok">✓</span> render 4 projects, 6 skill groups</p>
+            <p class="bl-line" data-delay="1500"><span class="bl-ok">✓</span> wire smooth-scroll + reveal animations</p>
+            <p class="bl-line" data-delay="1900"><span class="bl-pending">…</span> watching for edits</p>
+          </div>
+          <pre><code><span class="t-prompt">$</span> cat profile.json
 {
   <span class="t-key">"name"</span>: <span class="t-str">"Suvanwit Mandal"</span>,
   <span class="t-key">"role"</span>: <span class="t-str">"CSE Undergrad, IIIT Naya Raipur"</span>,
@@ -87,7 +113,7 @@
   <!-- ABOUT -->
   <section class="section" id="about">
     <div class="container">
-      <p class="section-tag">01 · about</p>
+      <p class="section-tag">01 · about <span class="jp-accent">自己紹介</span></p>
       <h2 class="section-title">About me</h2>
       <div class="about-grid">
         <p class="about-text">
@@ -130,7 +156,7 @@
   <!-- EDUCATION -->
   <section class="section section-alt" id="education">
     <div class="container">
-      <p class="section-tag">02 · education</p>
+      <p class="section-tag">02 · education <span class="jp-accent">学歴</span></p>
       <h2 class="section-title">Education</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -173,7 +199,7 @@
   <!-- EXPERIENCE / ACHIEVEMENTS -->
   <section class="section" id="experience">
     <div class="container">
-      <p class="section-tag">03 · experience &amp; achievements</p>
+      <p class="section-tag">03 · experience &amp; achievements <span class="jp-accent">経験</span></p>
       <h2 class="section-title">Experience &amp; Achievements</h2>
       <div class="cards">
         <div class="card">
@@ -206,7 +232,7 @@
   <!-- PROJECTS -->
   <section class="section section-alt" id="projects">
     <div class="container">
-      <p class="section-tag">04 · projects</p>
+      <p class="section-tag">04 · projects <span class="jp-accent">作品</span></p>
       <h2 class="section-title">Projects</h2>
 
       <article class="project-featured">
@@ -274,7 +300,7 @@
   <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="container">
-      <p class="section-tag">05 · skills</p>
+      <p class="section-tag">05 · skills <span class="jp-accent">技術</span></p>
       <h2 class="section-title">Skills</h2>
       <p class="skills-note">Tools and concepts I've worked with across coursework, self-directed projects, and independent research — actively building depth in all of them.</p>
       <div class="skills-grid">
@@ -309,7 +335,7 @@
   <!-- WRITING / PUBLICATION -->
   <section class="section section-alt" id="writing">
     <div class="container">
-      <p class="section-tag">06 · writing</p>
+      <p class="section-tag">06 · writing <span class="jp-accent">執筆</span></p>
       <h2 class="section-title">Publication &amp; Writing</h2>
       <div class="pub-card">
         <span class="badge badge-amber">in progress</span>
@@ -324,7 +350,7 @@
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="container contact-container">
-      <p class="section-tag">07 · contact</p>
+      <p class="section-tag">07 · contact <span class="jp-accent">連絡先</span></p>
       <h2 class="section-title">Let's talk</h2>
       <p class="contact-lead">
         Open to research collaborations, internships, and interesting ML problems.
@@ -349,6 +375,20 @@
     <a href="#home">back to top ↑</a>
   </div>
 </footer>
+
+<div class="status-bar" id="statusBar">
+  <span class="status-dot"></span>
+  <span class="status-label">LIVE</span>
+  <span class="status-sep">·</span>
+  <span id="statusSection">home</span>
+  <span class="status-sep">·</span>
+  <span id="statusScroll">0%</span>
+  <button class="status-sound" id="soundToggle" type="button" aria-pressed="false">
+    <svg id="soundIconOn" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    <svg id="soundIconOff" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    <span id="soundLabel">ambient off</span>
+  </button>
+</div>
 
 <script src="assets/script.js"></script>
 </body>
