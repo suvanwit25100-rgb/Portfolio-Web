@@ -167,8 +167,8 @@ function revealBuildLog() {
 
 // Typing effect in hero
 const phrases = [
-  "ML researcher — aircraft engine health monitoring",
-  "computer vision for real-world infrastructure",
+  "machine learning researcher",
+  "prognostics, computer vision & applied ML",
   "building, breaking, and re-training models",
 ];
 
