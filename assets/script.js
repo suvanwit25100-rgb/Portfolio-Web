@@ -69,3 +69,36 @@ sections.forEach((s) => observer.observe(s));
 // Footer year
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Scroll progress bar
+const progressBar = document.getElementById("scrollProgress");
+function updateProgress() {
+  if (!progressBar) return;
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = pct + "%";
+}
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
+
+// Active nav link on scroll (scroll-spy)
+const navAnchors = Array.from(document.querySelectorAll(".nav-link"));
+const spySections = navAnchors
+  .map((a) => document.querySelector(a.getAttribute("href")))
+  .filter(Boolean);
+
+const spyObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = "#" + entry.target.id;
+        navAnchors.forEach((a) => {
+          a.classList.toggle("active", a.getAttribute("href") === id);
+        });
+      }
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+);
+spySections.forEach((s) => spyObserver.observe(s));
